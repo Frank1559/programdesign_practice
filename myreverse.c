@@ -29,6 +29,7 @@ int main(int argc, char **argv){
             ptr[i] = buf[fileSize - i - 1];
             i++;
         }
+	if(ptr[strlen(ptr) - 1] == '\n') ptr[strlen(ptr) - 1] = '\0'; 
         ptr[fileSize] = '\0';
 	lseek(fd_head, 0, SEEK_SET);
         write(fd_head, ptr, fileSize);
